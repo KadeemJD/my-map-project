@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Your map initialization code will go here
+        var map = L.map('map').setView([37.8, -96], 4); // Set to a default view
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+// Assuming you have a Leaflet map object named 'map'
+L.geoJSON(
+    'C:/Users/kdaniels/Documents/US Census Bureau Research/gz_2010_us_040_00_500k.geojson'
+).addTo(map);
+
+
+    </script>
+</body>
+</html>
